@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 const routerBase = {
-  'GH_PAGES': { router: { base: '/kent-map/' } }
+  'GH_PAGES': { router: { base: '/app/' } }
 }[process.env.DEPLOY_ENV] || { router: { base: '/' } }
 
 export default {
