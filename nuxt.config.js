@@ -1,7 +1,15 @@
 import colors from 'vuetify/es5/util/colors'
 
+const routerBase = {
+  'GH_PAGES': { router: { base: '/kent-map/' } }
+}[process.env.DEPLOY_ENV] || { router: { base: '/' } }
+
 export default {
   mode: 'spa',
+  env: {
+    version: '0.0.1',
+    baseUrl: routerBase.router.base
+  },
   /*
   ** Headers of the page
   */
@@ -82,5 +90,9 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  generate: {
+    dir: 'docs',
+    fallback: true,
   }
 }
