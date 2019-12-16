@@ -5,6 +5,7 @@ const routerBase = {
 }[process.env.DEPLOY_ENV] || { router: { base: '/' } }
 
 export default {
+  ...routerBase,
   mode: 'spa',
   env: {
     version: '0.0.1',
@@ -22,7 +23,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'stylesheet', type: 'image/x-icon', href: `${routerBase.router.base}favicon.ico` },
     ]
   },
   /*
